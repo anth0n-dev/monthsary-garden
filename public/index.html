@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Monthsary • 3D Garden</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 3D WebGL Canvas -->
+  <div id="canvas-container"></div>
+
+  <!-- Minimal Welcome Overlay -->
+  <div id="welcome-overlay" class="overlay active">
+    <div class="welcome-card">
+      <h1 id="welcome-title">Happy Monthsary ❤️</h1>
+      <p id="welcome-subtitle" class="welcome-subtitle">Pass the 4 gate trials to unlock our secret starlit garden.</p>
+      <div class="simple-controls">
+        <span><strong>WASD</strong> Walk</span>
+        <span>•</span>
+        <span><strong>Mouse</strong> Look</span>
+        <span>•</span>
+        <span><strong>Click</strong> Interact</span>
+      </div>
+      <button id="enter-garden-btn" class="primary-btn">Start Gate Trials ✨</button>
+    </div>
+  </div>
+
+  <!-- Minimal In-Game HUD -->
+  <div id="hud" class="hud hidden">
+    <div class="hud-top-left">
+      <div class="hud-pill" id="gate-status-pill">🔒 Gate 1 / 4</div>
+    </div>
+
+    <div class="hud-top-right">
+      <div class="hud-pill" id="music-indicator">🎵 [M]</div>
+    </div>
+
+    <!-- Center Crosshair -->
+    <div id="crosshair" class="crosshair">
+      <div class="crosshair-dot"></div>
+    </div>
+
+    <!-- Subtle Interaction Prompt -->
+    <div id="interaction-prompt" class="interaction-prompt hidden">
+      <span id="prompt-text">Click to interact</span>
+    </div>
+
+    <!-- Game Feedback / Teleport Toast Banner -->
+    <div id="game-toast" class="game-toast hidden"></div>
+  </div>
+
+  <!-- Gate 3: Interactive Smartphone Lock Screen Modal (PIN: 8080) -->
+  <div id="phone-modal" class="modal-backdrop hidden">
+    <div id="phone-device" class="phone-device">
+      <button id="close-phone-btn" class="modal-close-btn" title="Close (ESC)">✕</button>
+      <div class="phone-notch"></div>
+      <div class="phone-lock-icon" id="phone-lock-icon">🔒</div>
+      <div class="phone-time">08:08</div>
+      <div class="phone-prompt" id="phone-prompt-label">Enter 4-Digit Passcode</div>
+
+      <div class="pin-dots" id="pin-dots">
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+      </div>
+
+      <div class="phone-keypad">
+        <button class="keypad-btn" data-digit="1">1</button>
+        <button class="keypad-btn" data-digit="2">2</button>
+        <button class="keypad-btn" data-digit="3">3</button>
+        <button class="keypad-btn" data-digit="4">4</button>
+        <button class="keypad-btn" data-digit="5">5</button>
+        <button class="keypad-btn" data-digit="6">6</button>
+        <button class="keypad-btn" data-digit="7">7</button>
+        <button class="keypad-btn" data-digit="8">8</button>
+        <button class="keypad-btn" data-digit="9">9</button>
+        <button class="keypad-btn keypad-clear" id="pin-clear-btn">C</button>
+        <button class="keypad-btn" data-digit="0">0</button>
+        <button class="keypad-btn keypad-back" id="pin-back-btn">⌫</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gazebo Love Letter Modal -->
+  <div id="letter-modal" class="modal-backdrop hidden">
+    <div class="letter-modal-card">
+      <button id="close-letter-btn" class="modal-close-btn" title="Close">✕</button>
+      <div class="letter-seal">💌</div>
+      <h2 id="letter-heading">Happy Monthsary</h2>
+      <div id="letter-body" class="letter-body"></div>
+      <div class="letter-signature">
+        <span id="letter-signoff">Forever yours,</span>
+        <strong id="letter-yourname">Your Love ❤️</strong>
+      </div>
+      <button id="release-lanterns-btn" class="primary-btn">✨ Release Sky Lanterns</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="config.js"></script>
+  <script src="photos_inline.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

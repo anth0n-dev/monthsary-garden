@@ -1,0 +1,17 @@
+{
+  "name": "monthsary-3d-garden",
+  "version": "1.0.0",
+  "description": "Interactive 20m x 20m 3D Starlit Romantic Garden for Monthsary Surprise",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

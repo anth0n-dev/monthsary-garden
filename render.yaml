@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: monthsary-3d-garden
+    runtime: static
+    buildCommand: echo "Static build complete"
+    staticPublishPath: ./public
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+

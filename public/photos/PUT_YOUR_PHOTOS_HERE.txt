@@ -1,0 +1,11 @@
+Drop your 6 favorite photos in this folder named:
+- 1.jpg
+- 2.jpg
+- 3.jpg
+- 4.jpg
+- 5.jpg
+- 6.jpg
+
+(Or use any filenames/URLs and update `image` inside `public/config.js`!)
+If you also want a custom song, drop `song.mp3` here and set `customSongUrl: "photos/song.mp3"` in `public/config.js`.
+
